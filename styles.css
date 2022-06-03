@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+/* ------ Colores ------ */
+
+:root {
+    --bg-color: hsl(0, 0%, 100%);
+    --bg-color-2: hsl(87, 100%, 67%);
+    --bg-color-3: hsl(120, 100%, 50%);
+    --button: hsl(87, 54%, 51%);
+    --text-color-1: hsl(0, 0%, 0%);
+    --text-color-2: rgb(53, 168, 53);
+    --font-2: "Poppins", sans-serif;
+    --text-color-3: hsl(184, 11%, 26%);
+    --color-newsletter: hsl(86, 100%, 66%);
+}
+
+/* ------ General ------ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "DM Sans", sans-serif;
+    padding: 0 7rem;
+}
+
+footer {
+    background-color: rgb(239, 238, 238);
+}
+
+::selection {
+    background-color: hsla(120, 100%, 50%, 0.9);
+    color: black;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.ul {
+    list-style: none;  
+}
+
+.btn-wsp {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    bottom: 40px;
+    right: 20px;
+    border-radius: 50px;
+    color: white;
+    background: #0df053;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.btn-wsp:hover {
+    text-decoration: none;
+    color: white;
+    background: #0df053;
+}
+
+/* ------ Código CSS reutilizable ------ */
+
+
+.container {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    position: relative;
+    width: 1370px;
+}
+
+
+/* ------ Navbar ------ */
+
+header {
+    /*Fijarse si modificando esto se ordena el grid*/
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    border: 0.5rem solid rgb(255, 255, 255);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links ul {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+
+.nav_link {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 2.5rem;
+    color: #3b4849;
+    transition: 0.3s;
+}
+
+.boton {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 2rem;
+    letter-spacing: .5px;
+    color: var(--text-color-1);
+    background-color: var(--button);
+    border-radius: 150px;
+    padding: 0.5rem 1.7rem 0.5rem 1.7rem;
+    transition: 0.3s;
+    font-family: var(--font-2);
+    font-size: 1.2rem;
+    color: white;
+}
+
+.boton:hover {
+    color: black;
+    background-color: var(--bg-color-3);
+}
+
+.nav_link:hover {
+    color: var(--text-color-2);
+}
+
+.search {
+    position: relative;
+    padding: 5px;
+}
+
+.search input {
+        width: 300px;
+        height: 40px;
+        padding: 0 20px;
+        font-size: 18px;
+        outline: none;
+        border: 2px solid silver;
+        border-radius: 30px;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: var(--button);
+}
+
+.fa-magnifying-glass:hover {
+    color: black;
+    background-color: var(--bg-color-3);
+}
+
+/* ------ Próximamente: Quilombo de líneas :D ------ */
+
+.hr1 {
+    margin-top: 10%;
+    position: static;
+    margin-left: -52rem;
+    width: 56rem;
+}
+
+.hr2 {
+    position: static;
+    width: 1370px;
+    size: 5px;
+}
+
+/* ------ Carousel ------ */
+
+main {
+    display: grid;
+    justify-content: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+}
+
+.carousel {
+    display: flex;
+    margin: -3.5rem 0 1rem 0;
+    max-width: 1500px;
+    max-height: 460px;
+}
+
+/* ------ Fijos (se llama así xq no sé qué nombre ponerle) ------ */
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+}
+
+.img{
+    width: 627px;
+    height: 300px; 
+}
+
+/* ------ Productos ------ */
+
+.recomendados-hr { 
+    margin-bottom: -5px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: auto auto auto;
+}
+
+.producto {
+    margin: 30px 10px 0 10px;
+}
+
+.producto-img {
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+}
+
+.producto-titulo {
+    margin-top: 10px;
+    text-align: center;
+    color: var(--text-color-3);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.producto-autor {
+    margin: 20px 0 40px 0;
+    text-align: center;
+    color: var(--text-color-3);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.producto-hr {
+    margin-top: -25px;
+    color: black;
+    border-radius: 20px;    
+}
+
+.producto-price {
+    margin-top: -5px;
+    color: var(--text-color-3);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#btn-vermas {
+    display: flex;
+    margin: 0 auto;
+    font-size: 2rem;
+    letter-spacing: .5px;
+    color: var(--text-color-1);
+    background-color: var(--button);
+    border-radius: 150px;
+    padding: 0.5rem 1.7rem 0.5rem 1.7rem;
+    transition: 0.3s;
+    font-family: var(--font-2);
+    font-size: 1.2rem;
+    color: white;
+    width: fit-content;
+}
+
+.margen-btn {
+    margin-top: 30px;
+}
+
+/* ------ Newsletter ------ */
+
+.newsletter {
+    margin-top: 3rem;
+}
+
+.newsletter-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "img titulo input boton";
+    border: 10px solid var(--color-newsletter);
+    padding: 20px;
+    align-items: center;
+}
+
+.celda {
+    grid-area: input;
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    padding-left: -10px;
+}
+
+.decoration {
+    border-top-color: #CC0000;
+    border-right-color: blue;
+    border-bottom-color: #00FF00;
+    border-left-color: #CCC;
+}
+
+.newsletter-img {
+    grid-area: img;
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.newsletter-title {
+    grid-area: titulo;
+    font-size: 50px;
+    margin-left: 20px;
+}
+
+.input-email {
+    width: 400px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid silver;
+    border-radius: 30px;
+}
+
+.newsletter-btn {
+    grid-area: boton;
+    height: fit-content;
+}
+
+/* ------ Pie de página ------ */
+
+.footer {
+    margin: 0 75px;
+}
+
+.pie-grid {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: auto;
+    grid-template-areas: "contacto leclub seguinos";
+    grid-column-gap: 60px;
+}
+
+.contacto {
+    grid-area: contacto;
+    font-size: 20px;
+}
+
+.leclub {
+    grid-area: leclub;
+    font-size: 20px;
+}
+
+.seguinos {
+    grid-area: seguinos;
+    font-size: 20px;
+}
+
+.title-footer {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.hr-footer {
+    border: 1px dashed;
+    border-radius: 20px;
+}
+
+.aa {
+    color: #3b4849;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;   
+}
+
+.img-footer {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
